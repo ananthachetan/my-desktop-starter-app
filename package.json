@@ -33,7 +33,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^5.2.3",
     "husky": "^4.2.5",
-    "lint-staged": ">=10",
+    "lint-staged": "^10.2.11",
     "prettier": "2.0.5",
     "roboto-fontface": "^0.10.0",
     "sass": "^1.26.8",
