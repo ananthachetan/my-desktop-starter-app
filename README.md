@@ -62,6 +62,30 @@ serve dist
 yarn lint
 ```
 
+### Serve as an Electron app
+
+```
+yarn electron:dev
+```
+
+#### OR
+
+```
+yarn electron:serve
+```
+
+### Build an Electron app
+
+```
+yarn electron:build
+```
+
+### Generate Desktop Icons
+
+```
+yarn lint
+```
+
 #### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/)
