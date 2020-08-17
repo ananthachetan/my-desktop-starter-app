@@ -27,3 +27,6 @@ info.log
 
 /dist
 .eslintcache
+
+#Electron-builder output
+/dist_electron

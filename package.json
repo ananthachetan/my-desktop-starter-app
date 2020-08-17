@@ -1,16 +1,27 @@
 {
-  "name": "my-web-starter-app",
+  "name": "my-desktop-starter-app",
   "version": "0.0.1",
-  "description": "A starter app for VueJS projects which uses Vuetify framework for UI, Axios for APIs, Lodash for common utilities and Vue-Route with Eslint, Babel and Prettier configured with Vue-CLI",
+  "description": "A starter app for Desktop projects",
+  "author": {
+    "name": "Anantha Chetan",
+    "email": "ananthachetan@gmail.com"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --modern",
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-m": "vue-cli-service build",
-    "build-m-r": "vue-cli-service build --report",
-    "build-r": "vue-cli-service build --modern --report",
-    "dev": "vue-cli-service serve"
+    "build-m": "vue-cli-service build --modern",
+    "build-m-r": "vue-cli-service build --modern --report",
+    "build-r": "vue-cli-service build --report",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "electron:dev": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "electron:generate-icons": "electron-icon-builder --input=./public/desktop-icon.png --output=build --flatten"
   },
+  "main": "background.js",
   "dependencies": {
     "axios": "^0.19.0",
     "lodash": "^4.17.15",
@@ -27,6 +38,9 @@
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.3",
     "babel-plugin-lodash": "^3.3.4",
+    "electron": "^9.0.0",
+    "electron-devtools-installer": "^3.1.0",
+    "electron-icon-builder": "^1.0.2",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
@@ -39,17 +53,18 @@
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
     "serve": "^11.3.2",
+    "vue-cli-plugin-electron-builder": "~2.0.0-rc.4",
     "vue-cli-plugin-vuetify": "^2.0.3",
     "vue-cli-plugin-vuetify-preset-responsive": "~0.0.1",
     "vue-template-compiler": "^2.6.10",
     "vuetify-loader": "^1.3.0"
   },
-  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
+  "license": "MIT",
   "lint-staged": {
     "*.{vue,js}": [
       "prettier --write",

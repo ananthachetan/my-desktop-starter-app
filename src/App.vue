@@ -1,49 +1,49 @@
 <template>
-	<v-app class="app">
-		<router-view></router-view>
-	</v-app>
+    <v-app class="app">
+        <router-view></router-view>
+    </v-app>
 </template>
 
 <script>
 export default {
-	name: "app",
+    name: "app",
 
-	data() {
-		return {};
-	},
+    data() {
+        return {};
+    },
 
-	created() {
-		if (!this.isBrowserCompatible()) {
-			this.$router.push({ name: "NotSupportedView" });
-		}
+    created() {
+        if (!this.isBrowserCompatible()) {
+            this.$router.push({ name: "NotSupportedView" });
+        }
 
-		this.initializeTheme();
-	},
+        this.initializeTheme();
+    },
 
-	methods: {
-		initializeTheme(params) {
-			// More props and Custom CSS Vars will be changed here.
-			if (params) {
-				if (params.mode === "dark") {
-					this.$vuetify.theme.dark = true;
-				}
+    methods: {
+        initializeTheme(params) {
+            // More props and Custom CSS Vars will be changed here.
+            if (params) {
+                if (params.mode === "dark") {
+                    this.$vuetify.theme.dark = true;
+                }
 
-				if (params.mode === "light") {
-					this.$vuetify.theme.dark = false;
-				}
-			}
-		},
+                if (params.mode === "light") {
+                    this.$vuetify.theme.dark = false;
+                }
+            }
+        },
 
-		isBrowserCompatible() {
-			return CSS.supports("display", "flex");
-		},
-	},
+        isBrowserCompatible() {
+            return CSS.supports("display", "flex");
+        },
+    },
 };
 </script>
 <style scoped>
 .app {
-	height: 100%;
-	width: 100%;
-	background: radial-gradient(#2d3436, #000000);
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(#2d3436, #000000);
 }
 </style>

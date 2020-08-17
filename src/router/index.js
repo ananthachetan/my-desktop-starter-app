@@ -2,28 +2,28 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 const MainView = () =>
-	import(/* webpackChunkName: "main-views-group" */ "@/components/app/MainView");
+    import(/* webpackChunkName: "main-views-group" */ "@/components/app/MainView");
 const NotSupportedView = () =>
-	import(/* webpackChunkName: "main-views-group" */ "@/components/app/NotSupportedView");
+    import(/* webpackChunkName: "main-views-group" */ "@/components/app/NotSupportedView");
 
 Vue.use(VueRouter);
 
 const routes = [
-	{
-		path: "/",
-		name: "MainView",
-		component: MainView,
-	},
-	{
-		path: "/not-supported",
-		name: "NotSupportedView",
-		component: NotSupportedView,
-	},
-	{ path: "*", redirect: "/" },
+    {
+        path: "/",
+        name: "MainView",
+        component: MainView,
+    },
+    {
+        path: "/not-supported",
+        name: "NotSupportedView",
+        component: NotSupportedView,
+    },
+    { path: "*", redirect: "/" },
 ];
 
 const router = new VueRouter({
-	routes,
+    routes,
 });
 
 export default router;
