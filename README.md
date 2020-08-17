@@ -83,7 +83,7 @@ yarn electron:build
 ### Generate Desktop Icons
 
 ```
-yarn lint
+yarn electron:generate-icons
 ```
 
 #### Customize configuration
